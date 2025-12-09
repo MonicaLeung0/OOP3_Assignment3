@@ -2,6 +2,18 @@ package implementations;
 
 import java.io.Serializable;
 
+/**
+ * Represents a single node within a Binary Search Tree (BST).
+ * Each node stores a data element along with references to its left
+ * and right child nodes. This class implements Serializable, allowing
+ * BST structures using these nodes to be saved and restored.
+ *
+ * @param <E> The type of data stored in this node.
+ *            It can be any object type used within the tree.
+ * 
+ * @author Precious, Monica, Jasmine, Mitali
+ */
+
 public class BSTreeNode<E> implements Serializable
 {
 	private static final long serialVersionUID = 1L;

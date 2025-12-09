@@ -5,6 +5,17 @@ import java.util.NoSuchElementException;
 
 import utilities.Iterator;
 
+/**
+ * A simple iterator implementation used to traverse lists of elements
+ * produced by Binary Search Tree traversals. This iterator steps through
+ * elements stored in an ArrayList in sequential order.
+ *
+ *
+ * @param <E> The type of elements returned by this iterator.
+ * 
+ * author: Precious, Monica, Jasmine, Mitali
+ */
+
 public class MyIterator<E> implements Iterator<E>
 {
 	
