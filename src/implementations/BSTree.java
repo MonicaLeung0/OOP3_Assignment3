@@ -8,6 +8,15 @@ import utilities.BSTreeADT;
 import utilities.Iterator;
 
 
+/**
+ * Implementation of a Binary Search Tree (BST) based on the BSTreeADT interface.
+ * It stores elements that are Comparable, ensuring correct sorting order.
+ * This class also implements Serializable to allow the entire tree structure to be saved and restored.
+ *
+ * @param <E> The type of element stored in the tree, which must extend Comparable.
+ * @author Precious, Monica, Jasmine, Mitali
+ */
+
 public class BSTree<E extends Comparable<? super E>> implements BSTreeADT<E>, Serializable 
 {
 	private static final long serialVersionUID = 1L;
@@ -44,6 +53,13 @@ public class BSTree<E extends Comparable<? super E>> implements BSTreeADT<E>, Se
 		return heightRecursive(this.root)+1;
 
 	}
+	
+	/**
+	 * Recursive helper method to calculate the height of a subtree.
+	 * The height of a node is 1 plus the height of the taller of its two children.
+	 * @param node The current node being examined.
+	 * @return The height of the subtree rooted at 'node' (-1 for an empty tree).
+	 */
 	private int heightRecursive(BSTreeNode<E> node) {
 	    if (node == null) return -1; // empty subtree
 
@@ -75,6 +91,13 @@ public class BSTree<E extends Comparable<? super E>> implements BSTreeADT<E>, Se
 		return search(entry) != null;
 	}
 	
+	
+	/**
+	 * Searches for a node containing the specified entry.
+	 * @param entry The element object being searched.
+	 * @return A new node containing the found element's data, or null if not found.
+	 * @throws NullPointerException if the entry being passed in is null.
+	 */
 	@Override
 	public BSTreeNode<E> search(E entry) throws NullPointerException {
 		if(entry == null)
@@ -106,6 +129,13 @@ public class BSTree<E extends Comparable<? super E>> implements BSTreeADT<E>, Se
 		
 		return null;
 	}
+	
+	/**
+	 * Adds a new entry to the tree in its correct sorted position.
+	 * @param newEntry The element being added to the tree.
+	 * @return true if the element is added successfully.
+	 * @throws NullPointerException if the entry is null.
+	 */
 
 	@Override
 	public boolean add(E newEntry) throws NullPointerException {
