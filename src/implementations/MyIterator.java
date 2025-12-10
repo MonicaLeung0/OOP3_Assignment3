@@ -6,6 +6,7 @@ import java.util.NoSuchElementException;
 import utilities.Iterator;
 
 /**
+
  * Custom implementation of the Iterator interface.
  * This iterator is designed to provide a mono-directional traversal over a collection
  * of elements, typically generated from a BST traversal (like in-order).
@@ -14,6 +15,8 @@ import utilities.Iterator;
  * @param <E> The type of element this iterator returns.
  * @author Precious, Monica, Jasmine, Mitali
  */
+
+
 public class MyIterator<E> implements Iterator<E>
 {
 	
@@ -46,13 +49,10 @@ public class MyIterator<E> implements Iterator<E>
 	 * @throws NoSuchElementException If the iteration has no more elements (i.e., hasNext() is false).
 	 */
 	@Override
-	@SuppressWarnings("unchecked")
 	public E next() throws NoSuchElementException {
-		if(!hasNext()) throw new NoSuchElementException("No more elements in the iteration.");
-		
-		// Retrieve the element at the current index.
-		// The post-increment (++) ensures the index is immediately ready for the next call to next().
-		return (E) data.get(currentIndex++);
+	    if(!hasNext()) throw new NoSuchElementException("No more elements in the iteration.");
+	    
+	    return data.get(currentIndex++); // No cast needed
 	}
 
 }
